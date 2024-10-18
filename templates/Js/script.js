@@ -15,3 +15,11 @@ function ShowDelete() {
         delet.style.display = "none";
     }
 }
+
+function ShowSidebar() {
+    let sidebar = document.getElementById("sidebar");
+    let bottom_radius = document.getElementById("create_category");
+    sidebar.style.display === "none" ? sidebar.style.display = "block" : sidebar.style.display = "none";
+    bottom_radius.style.borderBottomLeftRadius === "0px" ? bottom_radius.style.borderBottomLeftRadius = "15px" : bottom_radius.style.borderBottomLeftRadius = "0px";
+    bottom_radius.style.borderBottomRightRadius === "0px" ? bottom_radius.style.borderBottomRightRadius = "15px" : bottom_radius.style.borderBottomRightRadius = "0px";
+}

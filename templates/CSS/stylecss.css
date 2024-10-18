@@ -10,25 +10,25 @@
 :root {
     --background: #7FDA89;
     --block: #259073;
-    --emailblock1: #7FDA89;
     --emailblock2: #16325B;
-    --emailblock3: #E6F99D;
+    --light_yellow: #E6F99D;
     --white: white;
     --button: #227B94;
     --transparent: rgba(37, 144, 115, 0.5);
     --red: #FF0B0B;
+    --black: #000000;
 }
 
-/* COMPONENTS */
+
 
 .header{
     width: 100%;
     position: fixed;
-    background-color: var(--emailblock3)
+    background-color: var(--light_yellow)
 }
 .header_button {
     border: none;
-    background-color: var(--emailblock3);
+    background-color: var(--light_yellow);
 }
 .mobile_block {
     padding-top: 72px;
@@ -86,7 +86,7 @@ body {
     white-space: nowrap;
 }
 .email_block_bd {
-    background-color: var(--emailblock1);
+    background-color: var(--background);
     width: 100%;
     height: 45px;
     border-radius: 30px;
@@ -95,7 +95,7 @@ body {
     padding: 10px;
 }
 .input_block input {
-    background-color: var(--emailblock3);
+    background-color: var(--light_yellow);
     border-radius: 30px;
     border: 3px solid var(--emailblock2);
     width: 100%;
@@ -113,7 +113,7 @@ body {
 .main_btn {
     border-radius: 30px;
     border: 3px solid var(--emailblock2);
-    background-color: var(--emailblock1);
+    background-color: var(--background);
     width: 132px;
     height: 45px;
     margin-bottom: 20px;
@@ -148,15 +148,18 @@ body {
     padding: 9px 12px;
     margin-top: 10px;
     font-family: 'Balsamiq Sans', sans-serif;
+    -webkit-box-shadow: 0px 3px 1px 0px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0px 3px 1px 0px rgba(0,0,0,0.9);
+    box-shadow: 0px 3px 1px 0px rgba(0,0,0,0.9);
 }
-.create_block, .create_block * {
+.create_block {
     font-family: 'Balsamiq Sans', sans-serif !important;
 }
 .basebal, .basebal * {
     font-family: 'Balsamiq Sans', sans-serif !important;
 }
 .creation {
-    background-color: var(--emailblock3);
+    background-color: var(--light_yellow);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -191,7 +194,7 @@ body {
     white-space: nowrap;
 }
 .create_head {
-    background-color: var(--emailblock3);
+    background-color: var(--light_yellow);
     border-radius: 15px;
     align-items: center;
     justify-content: space-between;
@@ -201,13 +204,13 @@ body {
     margin-bottom: 10px;
 }
 .create_main {
-    background-color: var(--emailblock3);
+    background-color: var(--light_yellow);
     border-radius: 16px;
     padding: 9px;
     height: 105px;
 }
 .logo {
-    background-color: var(--emailblock3);
+    background-color: var(--light_yellow);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -220,7 +223,7 @@ body {
     justify-content: center;
 }
 .line {
-    background-color: var(--emailblock3);
+    background-color: var(--light_yellow);
     height: 5px;
     margin: 21px 0;
     border-radius: 30px;
@@ -243,9 +246,9 @@ body {
 }
 .menu_header {
     padding: 7px;
-    border-bottom: 2px solid var(--emailblock3);
+    border-bottom: 2px solid var(--light_yellow);
     font-size: 18px;
-    color: var(--emailblock3);
+    color: var(--light_yellow);
     align-items: center;
     display: flex;
 }
@@ -260,7 +263,7 @@ body {
 .menu_button {
     margin-top: 17px;
     padding: 0 15px;
-    background-color: var(--emailblock3);
+    background-color: var(--light_yellow);
     border: 6px solid var(--background);
     border-radius: 23px;
     width: 100%;
@@ -303,7 +306,7 @@ body {
     background-color: var(--transparent);
 }
 .delete_title {
-    background-color: var(--emailblock3);
+    background-color: var(--light_yellow);
     height: 43px;
     width: 290px;
     display: flex;
@@ -336,5 +339,91 @@ body {
     background-color: var(--red);
 }
 .is-green {
-    background-color: var(--emailblock1);
+    background-color: var(--background);
 }
+.is-dark_green {
+    background-color: var(--light_yellow);
+    margin-top: 25px;
+}
+.create_input {
+    background-color: var(--background);
+    border: none;
+    padding: 0 10px;
+    width: 100%;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.category {
+    margin-bottom: 20px;
+}
+.create_category {
+    background-color: var(--background);
+    border: none;
+    padding: 0 10px;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 23px;
+}
+.sidebar {
+    display: none;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 10px;
+    background-color: var(--background);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-size: 23px;
+    color: var(--white);
+    -webkit-box-shadow: -1px 4px 8px -3px rgba(0,0,0,0.55);
+    -moz-box-shadow: -1px 4px 8px -3px rgba(0,0,0,0.55);
+    box-shadow: -1px 4px 8px -3px rgba(0,0,0,0.55);
+}
+.sidebar ul li {
+    margin-bottom: 2px;
+}
+.sidebar ul div {
+    background-color: var(--light_yellow);
+    height: 5px;
+    border-radius: 30px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.create_category, .create_input {
+    -webkit-box-shadow: -1px 4px 8px -3px rgba(0,0,0,0.55);
+    -moz-box-shadow: -1px 4px 8px -3px rgba(0,0,0,0.55);
+    box-shadow: -1px 4px 8px -3px rgba(0,0,0,0.55);
+}
+.create_upload {
+    border: 3px solid var(--block);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 190px;
+    color: var(--block);
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: var(--black);
+}
+.create_description {
+    width: 100%;
+    background-color: var(--background);
+    border: 3px solid var(--block);
+    border-radius: 25px;
+    font-size: 20px;
+    height: 124px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
