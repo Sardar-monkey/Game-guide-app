@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Создание</title>
+    <title>Описание</title>
     <link rel="stylesheet" href="./CSS/stylecss.css">
 </head>
 
 <body>
-        <header class="header">
+    <header class="header">
             <div class="container">
                 <button class="header_button" onclick="ShowMenu();">
                     <img src="./assets/icons/Games.svg" alt="">
                 </button>
             </div>
-        </header>
+    </header>
 
-        <div id="overlay" style="display: none;"  onclick="ShowMenu()">
+    <div id="overlay" style="display: none;"  onclick="ShowMenu()">
             <div class="menu" onclick="event.stopPropagation()">
                 <div class="menu_header">
                     <img src="./assets/icons/Icon.svg" alt="">
@@ -52,40 +52,26 @@
             </div>
     </div>
 
-
     <main>
         <section class="mobile_block">
             <div class="second_header">
-                <span class="txt">Create</span>
+                <span class="txt">Description</span>
             </div>
            
             <div class="container">
                 <div class="create_block is-light_yellow">
-                    <input type="text" class="create_input" placeholder="Title">
-                    <div class="category">
-                        <div class="create_category" id="create_category" onclick="ShowSidebar()">
-                            <span>Category</span>
-                            <img src="./assets/icons/arrow.svg" alt="arrow">
-                        </div>
-                        <div class="sidebar" id="sidebar" style="display: none;">
-                            <ul>
-                              <li>Minecraft</li>
-                              <div class="line2"></div>
-                              <li>Doom</li>
-                              <div class="line2"></div>
-                              <li>Terraria</li>
-                              <div class="line2"></div>
-                              <li>Stardew Walley</li>
-                              <div class="line2"></div>
-                            </ul>
-                          </div>
+                    <div class="description_box">
+                        <h1 class="desc_title">Minecraft crafting recepies</h1>
+                        <span class="desc_date">DATE : 28.10.2024</span>
+                        <img src="./assets/icons/terraria.avif" alt="minecraft" class="desc_image">
+                        <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nesciunt quis recusandae repellendus, omnis ullam alias facere iusto rem magni, quibusdam harum quod doloribus ab sapiente iure earum perferendis voluptas.</p>
                     </div>
-                    
-                    <div class="create_upload">
-                        <img src="./assets/icons/plus.svg" alt="plus">
-                        Upload image
+                </div>
+                <div class="create_block is-light_yellow">
+                    <div class="description_box">
+                        <div class="author">Author : <span>Sardar</span></div>
+                        <div class="game_category">Category : <span>Terraria</span></div>
                     </div>
-                    <textarea type="text" class="create_description" rows="4" placeholder="Description..."></textarea>
                 </div>
             </div>
 

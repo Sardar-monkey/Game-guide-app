@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мои гайды</title>
+    <title>Все игры</title>
     <link rel="stylesheet" href="./CSS/stylecss.css">
 </head>
 
 <body>
-        <header class="header">
-            <div class="container">
+    <header class="header">
+        <div class="container">
             <button class="header_button" onclick="ShowMenu();">
                 <img src="./assets/icons/Games.svg" alt="">
             </button>
-            </div>
-        </header>
+        </div>
+    </header>
 
-        <div id="overlay" style="display: none;"  onclick="ShowMenu()">
+    <div id="overlay" style="display: none;"  onclick="ShowMenu()">
             <div class="menu" onclick="event.stopPropagation()">
                 <div class="menu_header">
                     <img src="./assets/icons/Icon.svg" alt="">
@@ -52,53 +52,28 @@
             </div>
     </div>
 
-        <div id="overlay2" style="display: none;" onclick="ShowDelete();">
-            <div  class="yousure" onclick="event.stopPropagation()">
-                <span class="delete_title">Are you sure about that?</span>
-                <div class="delete_buttons">
-                    <button class="btn is-green">
-                        Yes
-                    </button>
-            
-                    <button class="btn is-red" onclick="ShowDelete();">
-                        No
-                    </button>
-                </div>
-            </div>
-        </div>
-
     <main>
         <section class="mobile_block">
             <div class="second_header">
-                <span class="txt">My Guides</span>
+                <span class="txt">All Games</span>
             </div>
            
             <div class="container">
-                <div class="create_block">
-                    <div class="creation">
-                        <div><img src="./assets/icons/Editors.svg" alt=""></div>
-                        <span class="create">Create</span>
+                <div class="category_list">
+                    <div class="category_item">
+                        <img src="./assets/icons/minecraft.jpg" alt="minecraft" class="game_image">
                     </div>
-                    <div class="basebal">
-                        <div class="create_head">
-                            <span class="title">Minecraft sex update</span>
-                            <div class="images">
-                                <button class="edit_trash_btn"><img src="./assets/icons/Edit.svg" alt=""></button>
-                                <button class="edit_trash_btn" onclick="ShowDelete();"><img src="./assets/icons/Delete.svg" alt=""></button>
-                            </div>     
-                        </div>
-                        <div class="create_main">
-                            <img src="./assets/icons/minecraft.jpg" alt="minecraft" class="card_image">
-                            <span class="card_txt">Creator : sardarmonkey</span>
-                            <span class="card_txt">Date : 12.09.2024</span>
-                        </div>
+                    <div class="category_item">
+                        <img src="./assets/icons/doom.jpg" alt="doom" class="game_image">
+                    </div>
+                    <div class="category_item">
+                        <img src="./assets/icons/terraria.avif" alt="terraria" class="game_image">
                     </div>
                 </div>
             </div>
 
         </section>
     </main>
-
     <script src="./Js/script.js"></script>
 </body>
 </html>         

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
 * {
     font-family: "Tilt Neon", sans-serif;
     padding: 0;
@@ -189,8 +190,12 @@ body {
 .edit_trash_btn {
     background: none;
     border: none;
+    display: flex;
+    margin-right: 3px;
 }
 .images {
+    display: flex;
+    flex-direction: row;
     white-space: nowrap;
 }
 .create_head {
@@ -199,24 +204,32 @@ body {
     align-items: center;
     justify-content: space-between;
     display: flex;
-    padding: 0 7px;
-    font-size: 19px;
+    padding: 2px 7px;
+    font-size: 22px;
     margin-bottom: 10px;
 }
 .create_main {
     background-color: var(--light_yellow);
     border-radius: 16px;
     padding: 9px;
-    height: 105px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .logo {
     background-color: var(--light_yellow);
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto;
     align-items: center;
-    font-size: 140px;
-    margin-top: 10px;
+    text-align: center;
+    font-size: 18vw;
+    margin-top: 10px;       
+}
+.logo_txt {
     font-family: "Sedan SC", serif;
+}
+.is-green_txt {
+    background-color: var(--block);
 }
 .forflex {
     display: flex;
@@ -341,9 +354,11 @@ body {
 .is-green {
     background-color: var(--background);
 }
-.is-dark_green {
+.is-light_yellow {
     background-color: var(--light_yellow);
-    margin-top: 25px;
+    margin-top: 15px;
+    padding: 12px 17px;
+    border-radius: 25px;
 }
 .create_input {
     background-color: var(--background);
@@ -384,9 +399,9 @@ body {
     border-bottom-right-radius: 15px;
     font-size: 23px;
     color: var(--white);
-    -webkit-box-shadow: -1px 4px 8px -3px rgba(0,0,0,0.55);
-    -moz-box-shadow: -1px 4px 8px -3px rgba(0,0,0,0.55);
-    box-shadow: -1px 4px 8px -3px rgba(0,0,0,0.55);
+    -webkit-box-shadow: 0px 3px 1px 0px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0px 3px 1px 0px rgba(0,0,0,0.9);
+    box-shadow: 0px 3px 1px 0px rgba(0,0,0,0.9);
 }
 .sidebar ul li {
     margin-bottom: 2px;
@@ -399,9 +414,9 @@ body {
     margin-bottom: 10px;
 }
 .create_category, .create_input {
-    -webkit-box-shadow: -1px 4px 8px -3px rgba(0,0,0,0.55);
-    -moz-box-shadow: -1px 4px 8px -3px rgba(0,0,0,0.55);
-    box-shadow: -1px 4px 8px -3px rgba(0,0,0,0.55);
+    -webkit-box-shadow: 0px 3px 1px 0px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0px 3px 1px 0px rgba(0,0,0,0.9);
+    box-shadow: 0px 3px 1px 0px rgba(0,0,0,0.9);
 }
 .create_upload {
     border: 3px solid var(--block);
@@ -421,9 +436,61 @@ body {
     background-color: var(--background);
     border: 3px solid var(--block);
     border-radius: 25px;
-    font-size: 20px;
-    height: 124px;
+    font-size: 17px;
     padding: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 8px;
 }
-
+.category_list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+.category_item {
+    background-position: center;
+    background-size: cover;
+}
+.card_image {
+    width: 100%;
+    border-radius: 16px;
+    border: 3px solid var(--button);
+    margin-bottom: 13px;
+}
+.card_txt {
+    background-color: var(--background);
+    margin-bottom: 6px;
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.game_image {
+    width: 100%;
+    border-radius: 15px;
+    border: 3px solid var(--block);
+}
+.defined_game_list {
+    margin-top: 15px;
+}
+.description_box {
+    color: var(--block);
+    word-wrap: break-word;
+}
+.desc_title, .description {
+    margin-bottom: 7px;
+}
+.desc_date {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.desc_image {
+    width: 100%;
+    border: 3px solid var(--block);
+    border-radius: 30px;
+    margin-bottom: 5px;
+}
+.author, .game_category {
+    font-size: 18px;
+    font-weight: 700;
+}
