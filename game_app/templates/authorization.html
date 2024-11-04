@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Authorization{% endblock %}
+
+{% block content %}
+<section>
+    <form method="post" action="{% url 'login_page' %}">
+    {% csrf_token %}
+        <form class="main_block">
+            <div class="mobile_block">
+                <span class="image_block"><img src="{% static 'assets/icons/Icon.svg' %}" alt="" class="icon"></span>
+            <div class="registration">Authorization</div>
+            <div class="input_block">
+                <label for="username">Username</label>
+                <span class="email_block_bd">
+                    <input type="username" name="username" placeholder="Username" required>
+                </span>
+            </div>
+            <div class="input_block">
+                <label for="password">Password</label>
+                <span class="email_block_bd">
+                    <input type="password" name="password" placeholder="Password" required>
+                </span>
+            </div>
+            {% if form.errors %}
+                <span class="error">There is no such account</span>
+            {% endif %}
+            <div class="buttons">
+                <button type="submit" class="main_btn">Log In</button>
+                <a href="{% url 'sign_up_page' %}">
+                    <button type="button" class="second_btn">Create a new account?</button>
+                </a>
+            </div>
+        </form>
+    </form>
+</section>
+{% endblock %}

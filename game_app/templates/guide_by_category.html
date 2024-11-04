@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<section class="mobile_block">
+    {% for guide in guides %}
+    <div class="second_header">
+        <span class="txt">{{ guide.category }}</span>
+    </div>
+
+    <div class="container">
+        <div class="defined_game_list">
+            <div class="basebal">
+                <div class="create_head">
+                    <span class="title">{{ guide.name }}</span>      
+                </div>
+                <div class="create_main">
+                    <a href="{% url 'description_page' pk=guide.pk %}">
+                        <img src="{{ guide.image }}" alt="Guide Image" class="card_image">
+                    </a>
+                    <div class="card_txt">DATE: {{ guide.date|date:"d.m.Y" }}</div>
+                    <div class="card_txt">Category: {{ guide.category }}</div>
+                    <div class="card_txt">Author: {{ guide.creator }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% else %}
+<section class="mobile_block">
+    <div class="container">
+        <h1 class="title">You are an anonymous user</h1>
+        <p class="dark_text">To view the guides, first register and log in</p>
+        <div class="access-action">
+            <a href="{% url 'sign_up_page' %}">
+                <button typt="button" class="main_btn">Sing up</button>
+            </a>
+            <a href="{% url 'login_page' %}">
+                <button typt="button" class="main_btn">Log in</button>
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

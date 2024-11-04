@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static './CSS/stylecss.css' %}">
+</head>
+
+<body>
+    <audio id="exit-sound" src="{% static 'assets/sounds/tuco-get-out.mp3' %}" preload="auto"></audio>
+
+    <div id="overlay" style="display: none;"  onclick="ShowMenu()">
+        <div class="menu" onclick="event.stopPropagation()">
+            <div class="menu_header">
+                <img src="{% static './assets/icons/Icon.svg' %}" alt="">
+                <span class="menu_title">{{ user.username }}</span>
+            </div>
+            <div class="menu_main">
+                <button class="menu_button">
+                    <a href="{% url 'home_page' %}" class="">
+                        Main
+                    </a>
+                </button>
+                <button class="menu_button">
+                    <a href="{% url 'allgames_page'%}" class="">
+                        All Games 
+                    </a>
+                </button>
+                <button class="menu_button">
+                    <a href="{% url 'allguides_page'%}" class="">
+                        All Guides 
+                    </a>
+                </button>
+                <button class="menu_button">
+                    <a href="{% url 'myguides_page'%}" class="">
+                        My Guides
+                    </a>
+                </button>
+                {% if user.is_authenticated %}
+                <button class="menu_button" onclick="playExitSound()">
+                    <a href="{% url 'logout_action' %}" class="">
+                        Exit: <span>{{ user.username }}</span>
+                    </a>
+                {% else %}
+                <button class="menu_button">
+                    <a href="{% url 'sign_up_page' %}" class="">
+                    Registration
+                    </a>
+                </button>
+                <button class="menu_button">
+                    <a href="{% url 'login_page' %}" class="">
+                    Login
+                    </a>
+                </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <button class="header_button" onclick="ShowMenu();">
+                <img src="{% static './assets/icons/Games.svg' %}" alt="">
+            </button>
+        </div>
+    </header>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <script src="{% static './Js/script.js' %}"></script>
+</body>
+</html>         
