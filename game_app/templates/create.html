@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Create{% endblock %}
+
+{% block content %}
+<section class="mobile_block">
+    <div class="second_header">
+        <span class="txt">Create</span>
+    </div>
+
+    <div class="container">
+        <div class="create_block is-light_yellow">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.title }}
+                
+                <div class="category">
+                    {{ form.category }}
+                    <div class="sidebar" id="sidebar" style="display: none;">
+                        <ul>
+                            <li>Minecraft</li>
+                            <div class="line2"></div>
+                            <li>Doom</li>
+                            <div class="line2"></div>
+                            <li>Terraria</li>
+                            <div class="line2"></div>
+                            <li>Stardew Valley</li>
+                            <div class="line2"></div>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="create_upload">
+                    {{ form.image }}
+                    <label>Upload image</label>
+                </div>
+                
+                {{ form.description }}
+                
+                <button type="submit" class="submit_button">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

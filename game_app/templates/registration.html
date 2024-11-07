@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+<section>
+    <form method="post" autocomplete="off" class="registration_form">
+        {% csrf_token %}
+        <form class="mobile_block">
+            <div class="mobile_block">
+                <span class="image_block">
+                    <img src="{% static 'assets/icons/Icon.svg' %}" alt="" class="icon">
+                </span>
+                <div class="registration">Registration</div>
+    
+                <div class="input_block">
+                    <label for="username">Username</label>
+                    <span class="email_block_bd">
+                        {{ form.username }}
+                    </span>
+                </div>
+    
+                <div class="input_block">
+                    <label for="email">E-mail</label>
+                    <span class="email_block_bd">
+                        {{ form.email }}
+                    </span>
+                </div>
+    
+                <div class="input_block">
+                    <label for="password1">Password</label>
+                    <span class="email_block_bd">
+                        {{ form.password1 }}
+                    </span>
+                </div>
+    
+                <div class="input_block">
+                    <label for="password2">Password conf</label>
+                    <span class="email_block_bd">
+                        {{ form.password2 }}
+                    </span>
+                </div>
+    
+                <div class="buttons">
+                    <button type="submit" class="main_btn">Sign up</button>
+                    {% if form.errors %}
+                        <span class="error">This account already exists</span>
+                    {% endif %}
+                    <a href="{% url 'login_page' %}">
+                        <button type="button" class="second_btn">Already have an account?</button>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </form>
+</section>
+{% endblock %}

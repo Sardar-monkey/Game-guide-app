@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ guide.title }}{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<section class="mobile_block">
+    <div class="second_header">
+        <span class="txt">Description</span>
+    </div>
+    <div class="container">
+        <div class="create_block is-light_yellow">
+            <div class="description_box">
+                <h1 class="desc_title">{{ guide.title }}</h1>
+                <span class="desc_date">DATE: {{ guide.date|date:"d.m.Y" }}</span>
+                <img src="{{ guide.image }}" alt="Guide Image" class="card_image">
+                <p class="description">{{ guide.description|safe }}</p>
+            </div>
+        </div>
+        <div class="create_block is-light_yellow">
+            <div class="description_box">
+                <div class="author">Author: {{ guide.creator }}</div>
+                <div class="author">Category: {{ guide.category }}</div>
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+<section class="mobile_block">
+    <div class="container">
+        <h1 class="title">You are an anonymous user</h1>
+        <p class="dark_text">To view the guides, first register and log in</p>
+        <div class="access-action">
+            <a href="{% url 'sign_up_page' %}">
+                <button typt="button" class="main_btn">Sing up</button>
+            </a>
+            <a href="{% url 'login_page' %}">
+                <button typt="button" class="main_btn">Log in</button>
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
